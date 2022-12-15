@@ -24,7 +24,7 @@
           </div>
           <nav>
             <ul class="navi-list">
-              <li><a class="navi-list-link" href="index.html">Agencja</a></li>
+              <li><a class="navi-list-link is-active" href="index.html">Agencja</a></li>
               <li>
                 <a class="navi-list-link" href="portfolio.html">Portfolio</a>
               </li>
@@ -58,8 +58,8 @@
         <div class="header-bg section">
           <h1 class="title">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
           <button data-modal-open class="order" type="button">Zamów usługe</button>
-          <div class="backdrop is-hidden" data-modal>
-            <div class="modal">
+          <div class="backdrop">
+            <div class="modal is-hidden" data-modal>
               <button class="close-button" data-modal-close>X</button>
             </div>
           </div>
@@ -124,14 +124,19 @@
         <div class="container">
           <h3 class="secondtitle">Czym się zajmujemy</h3>
           <ul class="wwd-list">
-            <li>
+            <li class="wwd-imgbox">
               <img src="images/services/coding.jpg" alt="Programowanie" width="370" height="294" />
+              <div class="wwd-overlay">
+                <p>Aplikacje komputerowe</p>
+              </div>
             </li>
-            <li>
+            <li class="wwd-imgbox">
               <img src="images/services/testing.jpg" alt="Testowanie" width="370" height="294" />
+              <div class="wwd-overlay"><p>Aplikacje mobilne</p></div>
             </li>
-            <li>
+            <li class="wwd-imgbox">
               <img src="images/services/design.jpg" alt="Projektowanie" width="370" height="294" />
+              <div class="wwd-overlay"><p>Rozwiązania graficzne</p></div>
             </li>
           </ul>
         </div>

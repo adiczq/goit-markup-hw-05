@@ -30,8 +30,8 @@ ul {
   --socialIconBg: rgba(255, 255, 255, 0.1);
   --bottomLink: rgba(255, 255, 255, 0.6);
   --overlaybg: rgba(33, 150, 243, 0.9);
+  --wydOverlay: rgba(47, 48, 58, 0.8);
 }
-
 body {
   font-family: "Roboto", sans-serif;
   color: var(--font);
@@ -80,6 +80,41 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   align-items: center;
+}
+
+.is-active {
+  position: relative;
+  color: var(--blue);
+}
+
+.is-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -28px;
+  border-radius: 2px;
+  background-color: var(--blue);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navi-list-link:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -28px;
+  border-radius: 2px;
+  background-color: var(--blue);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-up-list {
@@ -202,6 +237,34 @@ body {
 .wwd-list {
   display: flex;
   justify-content: space-between;
+}
+
+.wwd-imgbox {
+  position: relative;
+  display: block;
+  width: 370px;
+  height: 294px;
+}
+
+.wwd-overlay {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  background-color: var(--wydOverlay);
+  bottom: 0;
+  left: 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.wwd-overlay p {
+  font-size: 0.875rem;
+  line-height: 1.14;
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .bg {
@@ -483,6 +546,7 @@ body {
 /* MODAL */
 
 .backdrop {
+  position: absolute
   position: fixed;
   left: 0;
   top: 0;
@@ -501,16 +565,20 @@ body {
   background-color: var(--white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  transform: translateX(-50%) translateY(-50%);
-  visibility: visible;
   display: block;
+  z-index: 1;
+  transition-property: visibility, opacity, transform;
+  transition-duration: 2s;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+  visibility: visible;
+  opacity: 1;
 }
 
 .is-hidden {
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(-50%) translateY(-50%) scale(0) rotate(0deg) skew(40deg, 40deg);
+  transform: translateX(-50%) translateY(-50%) scale(0);
 }
 
 .close-button {
