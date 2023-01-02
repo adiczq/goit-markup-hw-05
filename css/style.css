@@ -31,6 +31,7 @@ ul {
   --bottomLink: rgba(255, 255, 255, 0.6);
   --overlaybg: rgba(33, 150, 243, 0.9);
   --wydOverlay: rgba(47, 48, 58, 0.8);
+  --modalText: ;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -616,4 +617,37 @@ body {
 .close-button:hover {
   border: 2px solid var(--grey);
   font-weight: bold;
+}
+
+.modal-header {
+  margin: 40px auto 0;
+
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--font);
+}
+
+.modal-header-box {
+  display: flex;
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  margin: 12px auto;
+  width: 448px;
+}
+
+.label-box {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  line-height: 1.16;
+
+  letter-spacing: 0.01em;
+
+  color: var(--grey);
 }
